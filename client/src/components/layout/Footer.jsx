@@ -91,15 +91,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <FaPhone className="text-purple-500" />
-                <span>+1 (555) 123-4567</span>
+                <span>0763913526</span>
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-purple-500" />
-                <span>info@weddinghall.com</span>
+                <span>Mohamedihsas001@gmail.com</span>
               </li>
               <li className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-purple-500 mt-1" />
-                <span>123 Wedding Street, City, Country</span>
+                <span>123 main Street, Colombo, Srilanka</span>
               </li>
             </ul>
           </div>
