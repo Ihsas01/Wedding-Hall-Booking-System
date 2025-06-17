@@ -1,40 +1,40 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaChevronDown, FaLock, FaUserShield, FaCookie, FaUserCog, FaShieldAlt } from 'react-icons/fa';
+import { FaChevronDown, FaGavel, FaUserCheck, FaHandshake, FaExclamationTriangle, FaBook } from 'react-icons/fa';
 
-const PrivacyPolicy = () => {
+const TermsOfService = () => {
   const [expandedSection, setExpandedSection] = useState(null);
 
   const sections = [
     {
-      id: 'information-collection',
-      title: 'Information Collection',
-      icon: FaUserShield,
-      content: `We collect information that you provide directly to us, including when you create an account, make a booking, or contact us. This may include your name, email address, phone number, and other relevant details. We also collect information about your use of our services and your interactions with our website.`
+      id: 'agreement',
+      title: 'Agreement to Terms',
+      icon: FaHandshake,
+      content: `By accessing and using our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services. We reserve the right to modify these terms at any time, and such modifications shall be effective immediately upon posting.`
     },
     {
-      id: 'information-usage',
-      title: 'Information Usage',
-      icon: FaUserCog,
-      content: `We use the information we collect to provide, maintain, and improve our services, to process your bookings, to communicate with you, and to personalize your experience. We may also use your information to send you promotional materials and updates about our services.`
+      id: 'eligibility',
+      title: 'Eligibility',
+      icon: FaUserCheck,
+      content: `You must be at least 18 years old to use our services. By using our services, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into these terms.`
     },
     {
-      id: 'information-sharing',
-      title: 'Information Sharing',
-      icon: FaShieldAlt,
-      content: `We do not sell or rent your personal information to third parties. We may share your information with our service providers who assist us in operating our website and providing our services. We may also share your information when required by law or to protect our rights.`
+      id: 'bookings',
+      title: 'Booking and Cancellation',
+      icon: FaBook,
+      content: `All bookings are subject to availability and confirmation. We reserve the right to refuse any booking request. Cancellation policies vary by venue and service type. Please review the specific cancellation policy for your booking.`
     },
     {
-      id: 'data-security',
-      title: 'Data Security',
-      icon: FaLock,
-      content: `We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.`
+      id: 'prohibited',
+      title: 'Prohibited Activities',
+      icon: FaExclamationTriangle,
+      content: `You agree not to engage in any activity that may interfere with or disrupt the services or servers and networks connected to the services. This includes unauthorized access, distribution of harmful code, or any other activity that may harm our systems or other users.`
     },
     {
-      id: 'cookies',
-      title: 'Cookies and Tracking',
-      icon: FaCookie,
-      content: `We use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.`
+      id: 'liability',
+      title: 'Limitation of Liability',
+      icon: FaGavel,
+      content: `To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our services.`
     }
   ];
 
@@ -66,15 +66,15 @@ const PrivacyPolicy = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20"
+        className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Privacy Policy
+              Terms of Service
             </h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto">
-              We are committed to protecting your privacy and ensuring the security of your personal information.
+            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
+              Please read these terms carefully before using our services.
             </p>
           </div>
         </div>
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
                 <div className="flex items-center space-x-4">
-                  <section.icon className="w-6 h-6 text-purple-600" />
+                  <section.icon className="w-6 h-6 text-blue-600" />
                   <h2 className="text-xl font-semibold text-gray-900">
                     {section.title}
                   </h2>
@@ -141,4 +141,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy; 
+export default TermsOfService; 
