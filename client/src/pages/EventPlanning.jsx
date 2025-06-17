@@ -60,9 +60,9 @@ export default function EventPlanning() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-brand-navy to-brand-darknavy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export default function EventPlanning() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Event Planning Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brand-orange drop-shadow-lg">Event Planning Services</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
               Let us turn your vision into a memorable event with our professional planning services.
             </p>
@@ -86,8 +86,8 @@ export default function EventPlanning() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-brand-orange mb-4">Our Services</h2>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Comprehensive event planning solutions tailored to your needs.
           </p>
         </motion.div>
@@ -99,14 +99,14 @@ export default function EventPlanning() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow"
+              className="bg-brand-navy rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow border border-brand-darknavy"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <h3 className="text-xl font-semibold text-brand-orange mb-3">{service.title}</h3>
+              <p className="text-white/80 mb-4">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-600">
-                    <FaCheckCircle className="text-green-500 mr-2" />
+                  <li key={idx} className="flex items-center text-white/80">
+                    <FaCheckCircle className="text-brand-orange mr-2" />
                     {feature}
                   </li>
                 ))}
@@ -117,7 +117,7 @@ export default function EventPlanning() {
       </div>
 
       {/* Process Section */}
-      <div className="bg-gray-100">
+      <div className="bg-brand-darknavy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,8 +125,8 @@ export default function EventPlanning() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Process</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-brand-orange mb-4">Our Process</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               A streamlined approach to creating your perfect event.
             </p>
           </motion.div>
@@ -138,11 +138,11 @@ export default function EventPlanning() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-center"
             >
-              <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <FaCalendarAlt className="text-purple-600 text-2xl" />
+              <div className="bg-brand-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-brand-orange">
+                <FaCalendarAlt className="text-brand-orange text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Initial Consultation</h3>
-              <p className="text-gray-600">We discuss your vision, requirements, and budget.</p>
+              <h3 className="text-xl font-semibold mb-2 text-brand-orange">Initial Consultation</h3>
+              <p className="text-white/80">We discuss your vision, requirements, and budget.</p>
             </motion.div>
 
             <motion.div
@@ -151,11 +151,11 @@ export default function EventPlanning() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-center"
             >
-              <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <FaUsers className="text-purple-600 text-2xl" />
+              <div className="bg-brand-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-brand-orange">
+                <FaUsers className="text-brand-orange text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Planning & Coordination</h3>
-              <p className="text-gray-600">We handle all the details and vendor coordination.</p>
+              <h3 className="text-xl font-semibold mb-2 text-brand-orange">Planning & Coordination</h3>
+              <p className="text-white/80">We handle all the details and vendor coordination.</p>
             </motion.div>
 
             <motion.div
@@ -164,11 +164,11 @@ export default function EventPlanning() {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="text-center"
             >
-              <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <FaClock className="text-purple-600 text-2xl" />
+              <div className="bg-brand-navy rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 border-2 border-brand-orange">
+                <FaClock className="text-brand-orange text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Execution</h3>
-              <p className="text-gray-600">We ensure everything runs smoothly on the day.</p>
+              <h3 className="text-xl font-semibold mb-2 text-brand-orange">Execution</h3>
+              <p className="text-white/80">We ensure everything runs smoothly on the day.</p>
             </motion.div>
           </div>
         </div>
@@ -182,8 +182,8 @@ export default function EventPlanning() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-brand-orange mb-4">Client Testimonials</h2>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Hear what our clients have to say about their experience.
           </p>
         </motion.div>
@@ -195,16 +195,16 @@ export default function EventPlanning() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-md"
+              className="bg-brand-navy rounded-xl p-6 shadow-md border border-brand-darknavy"
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <FaStar key={i} className="text-yellow-400" />
                 ))}
               </div>
-              <p className="text-gray-600 mb-4">{testimonial.comment}</p>
+              <p className="text-white/80 mb-4">{testimonial.comment}</p>
               <div>
-                <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                <p className="font-semibold text-brand-orange">{testimonial.name}</p>
                 <p className="text-gray-500">{testimonial.event}</p>
               </div>
             </motion.div>
@@ -213,7 +213,7 @@ export default function EventPlanning() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-brand-navy to-brand-darknavy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -225,7 +225,7 @@ export default function EventPlanning() {
             <p className="text-xl mb-8">
               Let's create something extraordinary together.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-brand-orange text-brand-navy px-8 py-3 rounded-lg font-semibold hover:bg-brand-darknavy transition-colors">
               Get Started
             </button>
           </motion.div>

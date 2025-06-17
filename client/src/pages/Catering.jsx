@@ -62,9 +62,9 @@ export default function Catering() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-brand-navy to-brand-darknavy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export default function Catering() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Catering Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-brand-orange drop-shadow-lg">Catering Services</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
               Exquisite culinary experiences for every occasion.
             </p>
@@ -88,8 +88,8 @@ export default function Catering() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Menu Categories</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-brand-orange mb-4">Our Menu Categories</h2>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
             Discover our diverse range of catering options for any event.
           </p>
         </motion.div>
@@ -101,14 +101,14 @@ export default function Catering() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow"
+              className="bg-brand-navy rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow border border-brand-darknavy"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{category.title}</h3>
-              <p className="text-gray-600 mb-4">{category.description}</p>
+              <h3 className="text-xl font-semibold text-brand-orange mb-3">{category.title}</h3>
+              <p className="text-white/80 mb-4">{category.description}</p>
               <ul className="space-y-2">
                 {category.items.map((item, idx) => (
-                  <li key={idx} className="flex items-center text-gray-600">
-                    <span className="w-2 h-2 bg-purple-600 rounded-full mr-2"></span>
+                  <li key={idx} className="flex items-center text-white/80">
+                    <span className="w-2 h-2 bg-brand-orange rounded-full mr-2"></span>
                     {item}
                   </li>
                 ))}
@@ -119,7 +119,7 @@ export default function Catering() {
       </div>
 
       {/* Special Features Section */}
-      <div className="bg-gray-100">
+      <div className="bg-brand-darknavy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,8 +127,8 @@ export default function Catering() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Special Features</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-brand-orange mb-4">Special Features</h2>
+            <p className="text-lg text-white/80 max-w-3xl mx-auto">
               Additional services to enhance your catering experience.
             </p>
           </motion.div>
@@ -140,13 +140,13 @@ export default function Catering() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="bg-white rounded-xl p-6 text-center"
+                className="bg-brand-navy rounded-xl p-6 text-center border border-brand-darknavy"
               >
-                <div className="text-purple-600 mb-4 flex justify-center">
+                <div className="text-brand-orange mb-4 flex justify-center">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-brand-orange mb-2">{feature.title}</h3>
+                <p className="text-white/80">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function Catering() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-brand-navy to-brand-darknavy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -162,11 +162,9 @@ export default function Catering() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold mb-4">Ready to Plan Your Menu?</h2>
-            <p className="text-xl mb-8">
-              Let's create a memorable dining experience for your event.
-            </p>
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <h2 className="text-3xl font-bold mb-4 text-brand-orange">Ready to Plan Your Menu?</h2>
+            <p className="text-xl mb-8 text-white">Let's create a memorable dining experience for your event.</p>
+            <button className="bg-brand-orange text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-navy hover:text-brand-orange transition-colors">
               Request a Quote
             </button>
           </motion.div>

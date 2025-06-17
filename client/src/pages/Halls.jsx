@@ -47,16 +47,16 @@ export default function Halls() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-purple-600 to-pink-500">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
+      <section className="relative py-20 bg-gradient-to-r from-brand-navy to-brand-darknavy">
+        <div className="absolute inset-0 bg-brand-black opacity-40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-6"
+            className="text-5xl font-bold mb-6 text-brand-orange drop-shadow-lg"
           >
             Find Your Perfect Venue
           </motion.h1>
@@ -64,7 +64,7 @@ export default function Halls() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl mx-auto mb-8"
+            className="text-xl max-w-3xl mx-auto mb-8 text-white"
           >
             Discover beautiful wedding halls that match your style and budget
           </motion.p>
@@ -82,20 +82,20 @@ export default function Halls() {
                 placeholder="Search by name or location..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full px-6 py-4 rounded-full text-brand-darknavy focus:outline-none focus:ring-2 focus:ring-brand-orange"
               />
-              <FaSearch className="absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <FaSearch className="absolute right-6 top-1/2 transform -translate-y-1/2 text-brand-orange" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Filters Section */}
-      <section className="py-8 bg-white shadow-md">
+      <section className="py-8 bg-brand-darknavy shadow-md">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+              <label className="block text-sm font-medium text-brand-orange mb-2">Price Range</label>
               <input
                 type="range"
                 min="0"
@@ -104,13 +104,13 @@ export default function Halls() {
                 onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                 className="w-full"
               />
-              <div className="flex justify-between text-sm text-gray-600">
+              <div className="flex justify-between text-sm text-white/80">
                 <span>${priceRange[0]}</span>
                 <span>${priceRange[1]}</span>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Capacity Range</label>
+              <label className="block text-sm font-medium text-brand-orange mb-2">Capacity Range</label>
               <input
                 type="range"
                 min="0"
@@ -119,7 +119,7 @@ export default function Halls() {
                 onChange={(e) => setCapacityRange([capacityRange[0], parseInt(e.target.value)])}
                 className="w-full"
               />
-              <div className="flex justify-between text-sm text-gray-600">
+              <div className="flex justify-between text-sm text-white/80">
                 <span>{capacityRange[0]} guests</span>
                 <span>{capacityRange[1]} guests</span>
               </div>
@@ -138,7 +138,7 @@ export default function Halls() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-brand-navy rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-brand-darknavy"
               >
                 <div className="relative">
                   <img 
@@ -146,18 +146,18 @@ export default function Halls() {
                     alt={hall.name} 
                     className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-md">
-                    <span className="text-purple-600 font-semibold">${hall.price}/day</span>
+                  <div className="absolute top-4 right-4 bg-brand-orange px-3 py-1 rounded-full shadow-md">
+                    <span className="text-white font-semibold">${hall.price}/day</span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold mb-2">{hall.name}</h2>
-                  <div className="flex items-center text-gray-600 mb-2">
-                    <FaMapMarkerAlt className="mr-2" />
+                  <h2 className="text-2xl font-bold mb-2 text-brand-orange">{hall.name}</h2>
+                  <div className="flex items-center text-white/80 mb-2">
+                    <FaMapMarkerAlt className="mr-2 text-brand-orange" />
                     <span>{hall.location}</span>
                   </div>
-                  <div className="flex items-center text-gray-600 mb-4">
-                    <FaUsers className="mr-2" />
+                  <div className="flex items-center text-white/80 mb-4">
+                    <FaUsers className="mr-2 text-brand-orange" />
                     <span>Capacity: {hall.capacity} guests</span>
                   </div>
                   <div className="flex items-center mb-4">
@@ -168,11 +168,11 @@ export default function Halls() {
                         </span>
                       ))}
                     </div>
-                    <span className="ml-2 text-gray-600">({hall.rating})</span>
+                    <span className="ml-2 text-white/80">({hall.rating})</span>
                   </div>
                   <Link 
                     to={`/halls/${hall.id}`}
-                    className="block w-full text-center bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-300"
+                    className="block w-full text-center bg-brand-orange text-white py-3 rounded-lg font-semibold hover:bg-brand-darknavy hover:text-brand-orange transition-colors duration-300"
                   >
                     View Details
                   </Link>

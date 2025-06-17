@@ -147,19 +147,19 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
       <motion.section 
         style={{ opacity }}
-        className="relative py-32 bg-gradient-to-r from-purple-600 to-pink-500"
+        className="relative py-32 bg-gradient-to-r from-brand-navy to-brand-darknavy"
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
+        <div className="absolute inset-0 bg-brand-black opacity-40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl font-bold mb-6"
+            className="text-6xl font-bold mb-6 text-brand-orange drop-shadow-lg"
           >
             About Us
           </motion.h1>
@@ -167,7 +167,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl max-w-3xl mx-auto"
+            className="text-2xl max-w-3xl mx-auto text-white"
           >
             We're dedicated to making your special moments unforgettable by providing the perfect venues and services.
           </motion.p>
@@ -175,7 +175,7 @@ const About = () => {
       </motion.section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-brand-darknavy">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -188,10 +188,10 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="text-center p-8 rounded-xl bg-gray-50 shadow-lg hover:shadow-xl transition-shadow"
+                className="text-center p-8 rounded-xl bg-brand-navy shadow-lg hover:shadow-xl transition-shadow border border-brand-darknavy"
               >
-                <h3 className="text-4xl font-bold text-purple-600 mb-2">{stat.value}+</h3>
-                <p className="text-xl text-gray-600">{stat.label}</p>
+                <h3 className="text-4xl font-bold text-brand-orange mb-2">{stat.value}+</h3>
+                <p className="text-xl text-white/80">{stat.label}</p>
               </motion.div>
             ))}
           </div>

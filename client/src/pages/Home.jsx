@@ -163,12 +163,12 @@ const Home = () => {
   };
 
   return (
-    <div className="overflow-hidden font-sans">
+    <div className="overflow-hidden font-sans bg-brand-navy">
       {/* Hero Section with Parallax */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center bg-cover bg-center bg-fixed bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')]">
         <motion.div 
           style={{ y, opacity }}
-          className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-brand-darknavy/80 backdrop-blur-sm"
         />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -177,7 +177,7 @@ const Home = () => {
           className="relative z-10 text-center text-white px-6"
         >
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg text-brand-orange"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -185,7 +185,7 @@ const Home = () => {
             Your Dream Venue Awaits
           </motion.h1>
           <motion.p 
-            className="text-lg sm:text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -200,7 +200,7 @@ const Home = () => {
           >
             <Link
               to="/halls"
-              className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-full font-semibold text-lg hover:bg-white/20 transition-all duration-300 shadow-lg border border-white/20 hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-brand-orange text-white rounded-full font-semibold text-lg hover:bg-brand-darknavy hover:text-brand-orange transition-all duration-300 shadow-lg border border-brand-orange hover:scale-105"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -214,7 +214,7 @@ const Home = () => {
             </Link>
             <button
               onClick={() => setShowVideoModal(true)}
-              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:scale-105"
+              className="inline-flex items-center px-8 py-4 bg-brand-darknavy text-brand-orange rounded-full font-semibold text-lg hover:bg-brand-orange hover:text-white transition-all duration-300 shadow-lg hover:scale-105 border border-brand-orange"
             >
               <FaPlay className="mr-2" /> Watch Video
             </button>
@@ -226,7 +226,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-md py-6"
+          className="absolute bottom-0 left-0 right-0 bg-brand-darknavy/80 backdrop-blur-md py-6"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -236,11 +236,11 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + index * 0.1 }}
-                  className="text-center text-white"
+                  className="text-center text-brand-orange"
                 >
                   <div className="text-4xl mb-2">{stat.icon}</div>
                   <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
-                  <div className="text-sm md:text-base text-white/80">{stat.label}</div>
+                  <div className="text-sm md:text-base text-brand-orange/80">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

@@ -19,6 +19,10 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+        'brand-orange': '#FF6A00',
+        'brand-navy': '#223B57',
+        'brand-darknavy': '#0B1623',
+        'brand-black': '#000000',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
