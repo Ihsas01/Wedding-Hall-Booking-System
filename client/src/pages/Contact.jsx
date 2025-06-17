@@ -107,19 +107,19 @@ const Contact = () => {
               {
                 icon: <FaPhone className="text-4xl text-purple-600" />,
                 title: "Phone",
-                content: "+1 (555) 123-4567",
-                link: "tel:+15551234567"
+                content: "0763913526",
+                link: "tel:+763913526"
               },
               {
                 icon: <FaEnvelope className="text-4xl text-purple-600" />,
                 title: "Email",
-                content: "info@weddinghall.com",
-                link: "mailto:info@weddinghall.com"
+                content: "Mohamedihsas001@gmail.com",
+                link: "mailto:Mohamedihsas001@gmail.com"
               },
               {
                 icon: <FaMapMarkerAlt className="text-4xl text-purple-600" />,
                 title: "Address",
-                content: "123 Wedding Street, City, Country",
+                content: "123 main Street, Colombo, Srilankay",
                 link: "#"
               },
               {
