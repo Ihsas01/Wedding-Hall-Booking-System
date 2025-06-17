@@ -16,6 +16,8 @@ import VendorDashboard from './pages/dashboard/VendorDashboard';
 import BookingForm from './pages/booking/BookingForm';
 import Payment from './pages/booking/Payment';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Careers from './pages/Careers';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
               <Route path="/halls/:id" element={<HallDetails />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/blog" element={<Blog />} />
               
               {/* Protected Routes */}
               <Route element={<ProtectedRoute />}>
