@@ -60,20 +60,20 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20"
+        className="bg-gradient-to-r from-brand-navy to-brand-darknavy text-white py-20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-brand-orange drop-shadow-lg">
               Privacy Policy
             </h1>
-            <p className="text-lg md:text-xl text-purple-100 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
               We are committed to protecting your privacy and ensuring the security of your personal information.
             </p>
           </div>
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
       </motion.div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-brand-darknavy">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -92,20 +92,20 @@ const PrivacyPolicy = () => {
             <motion.div
               key={section.id}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-brand-navy rounded-lg shadow-md overflow-hidden border border-brand-darknavy"
             >
               <button
                 onClick={() => setExpandedSection(expandedSection === section.id ? null : section.id)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 py-4 flex items-center justify-between hover:bg-brand-darknavy/80 transition-colors duration-200"
               >
                 <div className="flex items-center space-x-4">
-                  <section.icon className="w-6 h-6 text-purple-600" />
-                  <h2 className="text-xl font-semibold text-gray-900">
+                  <section.icon className="w-6 h-6 text-brand-orange" />
+                  <h2 className="text-xl font-semibold text-brand-orange">
                     {section.title}
                   </h2>
                 </div>
                 <FaChevronDown
-                  className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
+                  className={`w-5 h-5 text-brand-orange/80 transition-transform duration-200 ${
                     expandedSection === section.id ? 'transform rotate-180' : ''
                   }`}
                 />
@@ -117,9 +117,9 @@ const PrivacyPolicy = () => {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="px-6 py-4 bg-gray-50"
+                    className="px-6 py-4 bg-brand-darknavy/80"
                   >
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-white/80 leading-relaxed">
                       {section.content}
                     </p>
                   </motion.div>
@@ -132,7 +132,7 @@ const PrivacyPolicy = () => {
         {/* Last Updated Section */}
         <motion.div
           variants={itemVariants}
-          className="mt-12 text-center text-gray-500"
+          className="mt-12 text-center text-brand-orange/80"
         >
           <p>Last updated: {new Date().toLocaleDateString()}</p>
         </motion.div>

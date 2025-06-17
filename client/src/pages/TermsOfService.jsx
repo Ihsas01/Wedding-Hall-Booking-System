@@ -37,16 +37,16 @@ const TermsOfService = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-purple-600 to-pink-500">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
+      <section className="relative py-20 bg-gradient-to-r from-brand-navy to-brand-darknavy">
+        <div className="absolute inset-0 bg-brand-black opacity-40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-6"
+            className="text-5xl font-bold mb-6 text-brand-orange drop-shadow-lg"
           >
             Terms of Service
           </motion.h1>
@@ -54,7 +54,7 @@ const TermsOfService = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl mx-auto"
+            className="text-xl max-w-3xl mx-auto text-white"
           >
             Please read these terms carefully before using our service
           </motion.p>
@@ -62,9 +62,9 @@ const TermsOfService = () => {
       </section>
 
       {/* Terms Content */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-brand-darknavy">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-brand-navy rounded-xl shadow-lg p-8 border border-brand-darknavy">
             <div className="space-y-8">
               {sections.map((section, index) => (
                 <motion.div
@@ -72,12 +72,12 @@ const TermsOfService = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="border-b border-gray-200 pb-8 last:border-b-0 last:pb-0"
+                  className="border-b border-brand-darknavy pb-8 last:border-b-0 last:pb-0"
                 >
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                  <h2 className="text-2xl font-semibold text-brand-orange mb-4">
                     {section.title}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-white/80 leading-relaxed">
                     {section.content}
                   </p>
                 </motion.div>
@@ -89,7 +89,7 @@ const TermsOfService = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="mt-12 text-center text-gray-500"
+              className="mt-12 text-center text-brand-orange/80"
             >
               <p>Last updated: {new Date().toLocaleDateString()}</p>
             </motion.div>

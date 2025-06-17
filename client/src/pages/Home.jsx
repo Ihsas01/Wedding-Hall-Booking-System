@@ -200,7 +200,7 @@ const Home = () => {
           >
             <Link
               to="/halls"
-              className="inline-flex items-center px-8 py-4 bg-brand-orange text-white rounded-full font-semibold text-lg hover:bg-brand-darknavy hover:text-brand-orange transition-all duration-300 shadow-lg border border-brand-orange hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-brand-orange text-white rounded-full font-semibold text-lg hover:bg-brand-darknavy hover:text-brand-orange transition-all duration-300 shadow-lg border border-brand-orange hover:scale-105"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -208,20 +208,23 @@ const Home = () => {
               <motion.span
                 animate={{ x: isHovered ? 5 : 0 }}
                 transition={{ duration: 0.2 }}
+                className="group-hover:translate-x-1 transition-transform"
               >
                 <FaArrowRight className="ml-3" />
               </motion.span>
             </Link>
-            <button
+            <motion.button
               onClick={() => setShowVideoModal(true)}
               className="inline-flex items-center px-8 py-4 bg-brand-darknavy text-brand-orange rounded-full font-semibold text-lg hover:bg-brand-orange hover:text-white transition-all duration-300 shadow-lg hover:scale-105 border border-brand-orange"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <FaPlay className="mr-2" /> Watch Video
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Enhanced Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -238,8 +241,16 @@ const Home = () => {
                   transition={{ delay: 1 + index * 0.1 }}
                   className="text-center text-brand-orange"
                 >
-                  <div className="text-4xl mb-2">{stat.icon}</div>
-                  <div className="text-3xl md:text-4xl font-bold mb-2">{stat.number}</div>
+                  <motion.div 
+                    className="text-4xl mb-2 transform transition-transform group-hover:scale-110"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+                  >
+                    {stat.icon}
+                  </motion.div>
+                  <div className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
                   <div className="text-sm md:text-base text-brand-orange/80">{stat.label}</div>
                 </motion.div>
               ))}

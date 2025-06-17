@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-brand-navy">
       {/* Floating Contact Button */}
       <motion.a
         href="https://wa.me/94763913526"
@@ -77,14 +77,14 @@ const Contact = () => {
       </motion.a>
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-purple-600 to-pink-500">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
+      <section className="relative py-20 bg-gradient-to-r from-brand-navy to-brand-darknavy">
+        <div className="absolute inset-0 bg-brand-black opacity-40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold mb-6"
+            className="text-5xl font-bold mb-6 text-brand-orange drop-shadow-lg"
           >
             Contact Us
           </motion.h1>
@@ -92,7 +92,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl max-w-3xl mx-auto"
+            className="text-xl max-w-3xl mx-auto text-white"
           >
             Get in touch with us for any questions or inquiries
           </motion.p>
@@ -100,30 +100,30 @@ const Contact = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-brand-darknavy">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <FaPhone className="text-4xl text-purple-600" />,
+                icon: <FaPhone className="text-4xl text-brand-orange" />,
                 title: "Phone",
                 content: "0763913526",
                 link: "tel:+763913526"
               },
               {
-                icon: <FaEnvelope className="text-4xl text-purple-600" />,
+                icon: <FaEnvelope className="text-4xl text-brand-orange" />,
                 title: "Email",
                 content: "Mohamedihsas001@gmail.com",
                 link: "mailto:Mohamedihsas001@gmail.com"
               },
               {
-                icon: <FaMapMarkerAlt className="text-4xl text-purple-600" />,
+                icon: <FaMapMarkerAlt className="text-4xl text-brand-orange" />,
                 title: "Address",
                 content: "123 main Street, Colombo, Srilankay",
                 link: "#"
               },
               {
-                icon: <FaClock className="text-4xl text-purple-600" />,
+                icon: <FaClock className="text-4xl text-brand-orange" />,
                 title: "Working Hours",
                 content: "Mon - Fri: 9:00 AM - 6:00 PM",
                 link: "#"
@@ -135,13 +135,13 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all"
+                className="text-center p-8 bg-brand-navy rounded-xl shadow-lg hover:shadow-xl transition-all border border-brand-darknavy"
               >
                 <div className="mb-4 transform hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-brand-orange">{item.title}</h3>
                 <a 
                   href={item.link}
-                  className="text-gray-600 hover:text-purple-600 transition-colors"
+                  className="text-white hover:text-brand-orange transition-colors"
                 >
                   {item.content}
                 </a>
@@ -152,7 +152,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form and Map Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-brand-navy">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -161,10 +161,10 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+              <h2 className="text-3xl font-bold text-brand-orange mb-8">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-brand-orange mb-1">
                     Your Name
                   </label>
                   <input
@@ -173,12 +173,12 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-brand-darknavy rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all bg-white text-brand-darknavy"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-brand-orange mb-1">
                     Email Address
                   </label>
                   <input
@@ -187,12 +187,12 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-brand-darknavy rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all bg-white text-brand-darknavy"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="subject" className="block text-sm font-medium text-brand-orange mb-1">
                     Subject
                   </label>
                   <input
@@ -201,12 +201,12 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-brand-darknavy rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all bg-white text-brand-darknavy"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-brand-orange mb-1">
                     Message
                   </label>
                   <textarea
@@ -214,15 +214,15 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="4"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+                    className="w-full px-4 py-2 border border-brand-darknavy rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all bg-white text-brand-darknavy"
+                    rows={5}
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
+                  className="w-full bg-brand-orange text-white py-3 rounded-lg font-semibold hover:bg-brand-navy hover:text-brand-orange transition-colors duration-300"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

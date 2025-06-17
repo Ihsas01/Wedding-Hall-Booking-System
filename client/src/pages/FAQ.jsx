@@ -128,7 +128,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-brand-navy py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
         <motion.div
@@ -137,10 +137,10 @@ const FAQ = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-orange mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Find answers to common questions about our wedding venues and services
           </p>
         </motion.div>
@@ -158,9 +158,9 @@ const FAQ = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions..."
-              className="w-full pl-12 pr-4 py-4 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-300"
+              className="w-full pl-12 pr-4 py-4 rounded-lg border border-brand-darknavy focus:border-brand-orange focus:ring-2 focus:ring-brand-orange transition-all duration-300 bg-brand-navy text-white placeholder-white/60"
             />
-            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-orange" />
           </div>
         </motion.div>
 
@@ -178,8 +178,8 @@ const FAQ = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
                 activeCategory === category.id
-                  ? 'bg-purple-600 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-gray-50'
+                  ? 'bg-brand-orange text-white shadow-lg'
+                  : 'bg-brand-navy text-brand-orange hover:bg-brand-darknavy/80 border border-brand-darknavy'
               }`}
             >
               {category.icon}
@@ -207,15 +207,15 @@ const FAQ = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
+                  className="bg-brand-darknavy rounded-lg shadow-md overflow-hidden"
                 >
                   <button
                     onClick={() => toggleQuestion(`${category.id}-${index}`)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-brand-darknavy transition-colors duration-300"
                   >
                     <div className="flex items-center gap-4">
-                      <FaQuestionCircle className="text-purple-600 flex-shrink-0" />
-                      <span className="font-semibold text-gray-900">{faq.question}</span>
+                      <FaQuestionCircle className="text-brand-orange flex-shrink-0" />
+                      <span className="font-semibold text-white">{faq.question}</span>
                     </div>
                     <motion.div
                       animate={{
@@ -223,7 +223,7 @@ const FAQ = () => {
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <FaChevronDown className="text-gray-400" />
+                      <FaChevronDown className="text-brand-orange" />
                     </motion.div>
                   </button>
                   <AnimatePresence>
@@ -233,9 +233,9 @@ const FAQ = () => {
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="px-6 py-4 bg-gray-50"
+                        className="px-6 py-4 bg-brand-navy"
                       >
-                        <p className="text-gray-600">{faq.answer}</p>
+                        <p className="text-brand-orange">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -252,15 +252,15 @@ const FAQ = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-white mb-4">
             Still have questions?
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-brand-orange mb-6">
             Our team is here to help you with any additional questions you may have
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-300"
+            className="inline-flex items-center px-6 py-3 bg-brand-orange text-brand-navy rounded-lg font-semibold hover:bg-brand-orange/80 transition-colors duration-300"
           >
             Contact Us
           </a>
