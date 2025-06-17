@@ -20,6 +20,10 @@ import Blog from './pages/Blog';
 import EventPlanning from './pages/EventPlanning';
 import Catering from './pages/Catering';
 import Decoration from './pages/Decoration';
+import HelpCenter from './pages/HelpCenter';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy/index';
+import FAQ from './pages/FAQ';
 
 function App() {
   return (
@@ -57,6 +61,10 @@ function App() {
               <Route path="/services/planning" element={<EventPlanning />} />
               <Route path="/services/catering" element={<Catering />} />
               <Route path="/services/decoration" element={<Decoration />} />
+              <Route path="/help" element={<HelpCenter />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </AnimatePresence>
         </main>
