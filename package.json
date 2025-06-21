@@ -1,4 +1,5 @@
 {
+  "homepage": "http://Ihsas01.github.io/Wedding-Hall-Booking-System",
   "name": "wedding-hall-booking",
   "version": "1.0.0",
   "description": "A full-stack wedding hall booking system",
@@ -7,6 +8,8 @@
     "install-all": "npm install && cd client && npm install && cd ../server && npm install",
     "client": "cd client && npm run dev",
     "server": "cd server && npm run dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d client/dist",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
     "start": "cd server && npm start"
@@ -23,6 +26,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.3.0"
   }
-} 
+}
