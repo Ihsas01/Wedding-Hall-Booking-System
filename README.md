@@ -2,11 +2,8 @@
 
 A full-stack web application for booking wedding halls and venues. Built with React, Node.js, Express, and MongoDB.
 
-## 🚀 Live Demo
 
-- **Frontend**: [Your Vercel/Netlify URL]
-- **Backend API**: [Your Render/Railway URL]
-- **Documentation**: [API Documentation]
+
 
 ## ✨ Features
 
