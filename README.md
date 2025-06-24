@@ -294,9 +294,9 @@ cd client && npm run build
 
 ## 📞 Support
 
-- **Documentation**: [DEPLOYMENT.md](./DEPLOYMENT.md)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/wedding-hall-booking/issues)
-- **Email**: your-email@example.com
+
+- **Issues**: [GitHub Issues](https://github.com/Ihsas01/wedding-hall-booking/issues)
+- **Email**: Mohamedihsas001@gmail.com
 
 ---
 
