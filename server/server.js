@@ -1,7 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
+
+// Import database configuration
+import sequelize, { testConnection, syncDatabase } from './config/database.js';
+
+// Import models
+import './models/User.js';
+import './models/Hall.js';
+import './models/Booking.js';
 
 // Import routes
 import authRoutes from './routes/auth.js';
@@ -25,10 +32,18 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Database connection
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+// Database connection and sync
+const initializeDatabase = async () => {
+  try {
+    await testConnection();
+    await syncDatabase();
+  } catch (error) {
+    console.error('Database initialization error:', error);
+  }
+};
+
+// Initialize database
+initializeDatabase();
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -41,6 +56,7 @@ app.get('/', (req, res) => {
   res.json({ 
     message: 'Welcome to Wedding Hall Booking API',
     version: '1.0.0',
+    database: 'MySQL',
     endpoints: {
       auth: '/api/auth',
       halls: '/api/halls',
@@ -55,7 +71,8 @@ app.get('/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
-    uptime: process.uptime()
+    uptime: process.uptime(),
+    database: 'MySQL'
   });
 });
 
@@ -75,4 +92,12 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`Database: MySQL`);
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('\nReceived SIGINT. Closing server and database connection...');
+  await sequelize.close();
+  process.exit(0);
 }); 

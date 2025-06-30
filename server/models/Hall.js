@@ -1,104 +1,124 @@
-import mongoose from 'mongoose';
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
+import User from './User.js';
 
-const hallSchema = new mongoose.Schema({
+const Hall = sequelize.define('Hall', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   name: {
-    type: String,
-    required: true,
-    trim: true
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   description: {
-    type: String,
-    required: true
+    type: DataTypes.TEXT,
+    allowNull: false
   },
-  location: {
-    address: {
-      type: String,
-      required: true
-    },
-    city: {
-      type: String,
-      required: true
-    },
-    state: {
-      type: String,
-      required: true
-    },
-    zipCode: String,
-    coordinates: {
-      lat: Number,
-      lng: Number
-    }
+  address: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  city: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  state: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  zipCode: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  latitude: {
+    type: DataTypes.DECIMAL(10, 8),
+    allowNull: true
+  },
+  longitude: {
+    type: DataTypes.DECIMAL(11, 8),
+    allowNull: true
   },
   capacity: {
-    type: Number,
-    required: true,
-    min: 1
-  },
-  price: {
-    type: Number,
-    required: true,
-    min: 0
-  },
-  pricePerHour: {
-    type: Number,
-    min: 0
-  },
-  images: [{
-    type: String,
-    required: true
-  }],
-  amenities: [{
-    type: String
-  }],
-  features: {
-    parking: {
-      type: Boolean,
-      default: false
-    },
-    catering: {
-      type: Boolean,
-      default: false
-    },
-    decoration: {
-      type: Boolean,
-      default: false
-    },
-    audioVisual: {
-      type: Boolean,
-      default: false
-    },
-    wifi: {
-      type: Boolean,
-      default: false
-    },
-    airConditioning: {
-      type: Boolean,
-      default: false
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    validate: {
+      min: 1
     }
   },
-  availability: {
-    type: String,
-    enum: ['available', 'booked', 'maintenance'],
-    default: 'available'
+  price: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false,
+    validate: {
+      min: 0
+    }
   },
-  vendor: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+  pricePerHour: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: true,
+    validate: {
+      min: 0
+    }
+  },
+  images: {
+    type: DataTypes.JSON,
+    allowNull: true
+  },
+  amenities: {
+    type: DataTypes.JSON,
+    allowNull: true
+  },
+  parking: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  catering: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  decoration: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  audioVisual: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  wifi: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  airConditioning: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  availability: {
+    type: DataTypes.ENUM('available', 'booked', 'maintenance'),
+    defaultValue: 'available'
+  },
+  vendorId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'users',
+      key: 'id'
+    }
   },
   isActive: {
-    type: Boolean,
-    default: true
+    type: DataTypes.BOOLEAN,
+    defaultValue: true
   }
 }, {
+  tableName: 'halls',
   timestamps: true
 });
 
-// Index for search functionality
-hallSchema.index({ 
-  name: 'text', 
-  description: 'text', 
-  'location.city': 'text' 
-});
+// Define associations
+Hall.belongsTo(User, { foreignKey: 'vendorId', as: 'vendor' });
+User.hasMany(Hall, { foreignKey: 'vendorId', as: 'halls' });
 
-export default mongoose.model('Hall', hallSchema); 
+export default Hall; 

@@ -17,9 +17,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1",
     "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
     "stripe": "^14.17.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
   }
-} 
+}

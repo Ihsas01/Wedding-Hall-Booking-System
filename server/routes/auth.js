@@ -22,24 +22,22 @@ router.post('/register', [
     const { name, email, password, role } = req.body;
 
     // Check if user already exists
-    let user = await User.findOne({ email });
+    let user = await User.findOne({ where: { email } });
     if (user) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
     // Create new user
-    user = new User({
+    user = await User.create({
       name,
       email,
       password,
       role
     });
 
-    await user.save();
-
     // Create JWT token
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user.id },
       process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
@@ -48,7 +46,7 @@ router.post('/register', [
       message: 'User registered successfully',
       token,
       user: {
-        id: user._id,
+        id: user.id,
         name: user.name,
         email: user.email,
         role: user.role
@@ -74,7 +72,7 @@ router.post('/login', [
     const { email, password } = req.body;
 
     // Check if user exists
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ where: { email } });
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
@@ -87,7 +85,7 @@ router.post('/login', [
 
     // Create JWT token
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user.id },
       process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
@@ -96,7 +94,7 @@ router.post('/login', [
       message: 'Login successful',
       token,
       user: {
-        id: user._id,
+        id: user.id,
         name: user.name,
         email: user.email,
         role: user.role
@@ -113,12 +111,16 @@ router.get('/me', auth, async (req, res) => {
   try {
     res.json({
       user: {
-        id: req.user._id,
+        id: req.user.id,
         name: req.user.name,
         email: req.user.email,
         role: req.user.role,
         phone: req.user.phone,
-        address: req.user.address
+        street: req.user.street,
+        city: req.user.city,
+        state: req.user.state,
+        zipCode: req.user.zipCode,
+        country: req.user.country
       }
     });
   } catch (error) {
