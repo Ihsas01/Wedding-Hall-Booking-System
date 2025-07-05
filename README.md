@@ -57,5 +57,18 @@ A full-stack web application for booking wedding halls, built with **React**, **
 - **Bookings**: `/api/bookings`, `/api/bookings/:id`, `/api/bookings` (CRUD)
 - **Payments**: `/api/payments/create-payment-intent`, `/api/payments/confirm`
 
+## 📊 Database Schema
+- **User**: name, email, password, role, phone
+- **Hall**: name, description, location, capacity, price
+- **Booking**: hall/customer refs, eventDate, totalAmount, status
 
+## 🔒 Security
+- JWT authentication
+- Password hashing (bcrypt)
+- Input validation
+- CORS configuration
+
+## 📞 Support
+- [GitHub Issues](https://github.com/Ihsas01/wedding-hall-booking/issues)
+- Email: Mohamedihsas001@gmail.com
 
