@@ -68,3 +68,8 @@ A full-stack web application for booking wedding halls, built with **React**, **
 - Input validation
 - CORS configuration
 
+
+
+## 📞 Support
+- [GitHub Issues](https://github.com/Ihsas01/wedding-hall-booking/issues)
+- Email: Mohamedihsas001@gmail.com
